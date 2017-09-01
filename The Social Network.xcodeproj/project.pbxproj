@@ -13,6 +13,10 @@
 		7F590FBF1F59410200C81AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F590FBE1F59410200C81AEC /* Assets.xcassets */; };
 		7F590FC21F59410200C81AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F590FC01F59410200C81AEC /* LaunchScreen.storyboard */; };
 		7F590FCA1F59418200C81AEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F590FC91F59418200C81AEC /* GoogleService-Info.plist */; };
+		7F590FD01F59561500C81AEC /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F590FCF1F59561500C81AEC /* FancyView.swift */; };
+		7F590FD31F59569100C81AEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F590FD21F59569100C81AEC /* Constants.swift */; };
+		7F590FD51F59580800C81AEC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F590FD41F59580800C81AEC /* RoundButton.swift */; };
+		7F590FD71F5959C800C81AEC /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F590FD61F5959C800C81AEC /* FancyField.swift */; };
 		84AFFB9C9BE8459FAF4233C7 /* Pods_The_Social_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FCB74D67EC91AFFFDAA11D /* Pods_The_Social_Network.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		7F590FC11F59410200C81AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F590FC31F59410200C81AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F590FC91F59418200C81AEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F590FCF1F59561500C81AEC /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		7F590FD21F59569100C81AEC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F590FD41F59580800C81AEC /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		7F590FD61F5959C800C81AEC /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		80FCB74D67EC91AFFFDAA11D /* Pods_The_Social_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Social_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA943EDFCABC01DAF5923E5B /* Pods-The Social Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Social Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Social Network/Pods-The Social Network.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +88,7 @@
 		7F590FB61F59410200C81AEC /* The Social Network */ = {
 			isa = PBXGroup;
 			children = (
+				7F590FD11F59568200C81AEC /* Util */,
 				7F590FCE1F5942D400C81AEC /* Controller */,
 				7F590FCD1F5942D000C81AEC /* View */,
 				7F590FCC1F5942CC00C81AEC /* Model */,
@@ -103,6 +112,9 @@
 		7F590FCD1F5942D000C81AEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F590FCF1F59561500C81AEC /* FancyView.swift */,
+				7F590FD41F59580800C81AEC /* RoundButton.swift */,
+				7F590FD61F5959C800C81AEC /* FancyField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -113,6 +125,14 @@
 				7F590FB91F59410200C81AEC /* SignInVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7F590FD11F59568200C81AEC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7F590FD21F59569100C81AEC /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F590FD71F5959C800C81AEC /* FancyField.swift in Sources */,
 				7F590FBA1F59410200C81AEC /* SignInVC.swift in Sources */,
+				7F590FD51F59580800C81AEC /* RoundButton.swift in Sources */,
 				7F590FB81F59410200C81AEC /* AppDelegate.swift in Sources */,
+				7F590FD01F59561500C81AEC /* FancyView.swift in Sources */,
+				7F590FD31F59569100C81AEC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
