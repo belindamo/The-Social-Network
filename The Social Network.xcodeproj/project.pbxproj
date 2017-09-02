@@ -19,6 +19,7 @@
 		7F590FD71F5959C800C81AEC /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F590FD61F5959C800C81AEC /* FancyField.swift */; };
 		7F590FDA1F595F4300C81AEC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F590FD81F595F4300C81AEC /* FBSDKCoreKit.framework */; };
 		7F590FDB1F595F4400C81AEC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F590FD91F595F4300C81AEC /* FBSDKLoginKit.framework */; };
+		7FDFE67D1F5AE73A00A14EE8 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFE67C1F5AE73A00A14EE8 /* FeedVC.swift */; };
 		84AFFB9C9BE8459FAF4233C7 /* Pods_The_Social_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FCB74D67EC91AFFFDAA11D /* Pods_The_Social_Network.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		7F590FD61F5959C800C81AEC /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		7F590FD81F595F4300C81AEC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		7F590FD91F595F4300C81AEC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		7FDFE67C1F5AE73A00A14EE8 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		80FCB74D67EC91AFFFDAA11D /* Pods_The_Social_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Social_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA943EDFCABC01DAF5923E5B /* Pods-The Social Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Social Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Social Network/Pods-The Social Network.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				7F36D8BA1F596E2F00439CE6 /* The Social Network.entitlements */,
-				7F590FD11F59568200C81AEC /* Util */,
 				7F590FCE1F5942D400C81AEC /* Controller */,
 				7F590FCD1F5942D000C81AEC /* View */,
 				7F590FCC1F5942CC00C81AEC /* Model */,
+				7F590FD11F59568200C81AEC /* Util */,
 				7F590FB71F59410200C81AEC /* AppDelegate.swift */,
 				7F590FBB1F59410200C81AEC /* Main.storyboard */,
 				7F590FBE1F59410200C81AEC /* Assets.xcassets */,
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				7F590FB91F59410200C81AEC /* SignInVC.swift */,
+				7FDFE67C1F5AE73A00A14EE8 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F590FD71F5959C800C81AEC /* FancyField.swift in Sources */,
+				7FDFE67D1F5AE73A00A14EE8 /* FeedVC.swift in Sources */,
 				7F590FBA1F59410200C81AEC /* SignInVC.swift in Sources */,
 				7F590FD51F59580800C81AEC /* RoundButton.swift in Sources */,
 				7F590FB81F59410200C81AEC /* AppDelegate.swift in Sources */,
