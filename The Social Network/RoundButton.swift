@@ -22,8 +22,7 @@ class RoundButton: UIButton {
         layer.cornerRadius = 8.0
         
     }
-    
-    /* // makes the button circular.
+    /*
     override func layoutSubviews() {
         super.layoutSubviews()
         
