@@ -33,7 +33,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
 
-    @IBAction func signOutTapped(_ sender: Any) {
+    @IBAction func signOutTapped(_ sender: UIImageView) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("BMO: ID removed from keychain \(keychainResult)")
         try! Auth.auth().signOut()

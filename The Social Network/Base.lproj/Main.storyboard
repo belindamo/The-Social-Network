@@ -154,24 +154,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0T-HB-nWL" customClass="FancyView" customModule="The_Social_Network" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="414" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-ZS-ROh">
-                                        <rect key="frame" x="349" y="17" width="57" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="AFf-RR-SLE"/>
-                                        </constraints>
-                                        <state key="normal" title="Sign out"/>
-                                        <connections>
-                                            <action selector="signOutTapped:" destination="ajk-tI-1nu" eventType="touchUpInside" id="BUd-cb-2aP"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-7K-jFq">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-7K-jFq">
                                         <rect key="frame" x="8" y="8" width="40" height="49"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="hNq-gw-7XT"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="P2D-Nf-ca8" appends="YES" id="6Rn-ph-0WQ"/>
+                                            <outletCollection property="gestureRecognizers" destination="jOh-pT-OSr" appends="YES" id="V6X-7a-7Ri"/>
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqf-Gr-Wbf">
@@ -189,12 +179,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="RID-Gu-u1c"/>
                                     <constraint firstItem="Iq0-7K-jFq" firstAttribute="top" secondItem="x0T-HB-nWL" secondAttribute="top" constant="8" id="T9P-ga-f6t"/>
-                                    <constraint firstItem="UVB-ZS-ROh" firstAttribute="trailing" secondItem="x0T-HB-nWL" secondAttribute="trailingMargin" id="Wrc-mn-lzK"/>
                                     <constraint firstItem="Uqf-Gr-Wbf" firstAttribute="centerY" secondItem="x0T-HB-nWL" secondAttribute="centerY" id="azp-jI-x3U"/>
                                     <constraint firstAttribute="bottom" secondItem="Iq0-7K-jFq" secondAttribute="bottom" constant="8" id="eYG-uk-0q0"/>
                                     <constraint firstItem="Uqf-Gr-Wbf" firstAttribute="centerX" secondItem="x0T-HB-nWL" secondAttribute="centerX" id="nUL-cd-CE2"/>
                                     <constraint firstItem="Iq0-7K-jFq" firstAttribute="leading" secondItem="x0T-HB-nWL" secondAttribute="leading" constant="8" id="qDJ-XD-JXz"/>
-                                    <constraint firstItem="UVB-ZS-ROh" firstAttribute="centerY" secondItem="x0T-HB-nWL" secondAttribute="centerY" id="v2K-bn-sxI"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sQ-QS-FPW" customClass="FancyView" customModule="The_Social_Network" customModuleProvider="target">
@@ -378,7 +366,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpr-U3-zKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="P2D-Nf-ca8"/>
+                <tapGestureRecognizer id="jOh-pT-OSr" userLabel="signOut">
+                    <connections>
+                        <action selector="signOutTapped:" destination="ajk-tI-1nu" id="VV8-Rd-CR8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="818.84057971014499" y="76.630434782608702"/>
         </scene>
