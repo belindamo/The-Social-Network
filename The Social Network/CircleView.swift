@@ -16,6 +16,7 @@ class CircleView: UIImageView {
         let radius: CGFloat = self.bounds.size.width / 2.0
         
         self.layer.cornerRadius = radius
+        clipsToBounds = true
     }
     
 

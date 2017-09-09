@@ -10,16 +10,25 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageAdd: CircleView!
 
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache() //static = global. to retrieve images
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true //be able to edit image before picking it
+        imagePicker.delegate = self
         
         //dataservice event listener. see if any value changed in posts
         // .value looks for basically anything that changes
@@ -51,14 +60,36 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let post = posts[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
-            cell.configureCell(post: post) //hookup with PostCell view
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+            
+            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.configureCell(post: post, img: img) //if have image in cache
+            } else {
+                cell.configureCell(post: post) //if need to download image from firebase
+            }
             return cell
         } else {
             return PostCell() //empty cell
         }
     }
 
+    
+    //when finished picking image, gets array of info back
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageAdd.image = image
+        } else {
+            print("BMO: Valid image not selected")
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addImageTapped(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func signOutTapped(_ sender: UIImageView) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("BMO: ID removed from keychain \(keychainResult)")
