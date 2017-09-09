@@ -18,6 +18,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //dataservice listener. see if any value changed in posts; .value 
+        //looks for basically anything that changes
+        DataService.ds.REF_POSTS.observe(.value, with: {(snapshot) in
+            print(snapshot.value!)
+        })
 
     }
     
