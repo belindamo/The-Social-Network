@@ -15,10 +15,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
+    @IBOutlet weak var captionField: UITextField!
 
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache() //static = global. to retrieve images
+    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         //dataservice event listener. see if any value changed in posts
         // .value looks for basically anything that changes
         DataService.ds.REF_POSTS.observe(.value, with: {(snapshot) in
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] { //on load, hook up model data with firebase
                 for snap in snapshot {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
@@ -78,6 +82,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            imageSelected = true
         } else {
             print("BMO: Valid image not selected")
         }
@@ -89,6 +94,62 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func postBtnTapped(_ sender: Any) {
+        //guard statement lets you string a bunch of 'if let's together
+        guard let caption = captionField.text, caption != "" else {
+            print("BMO: Caption must be entered")
+            return //if in here, means that something is fucked up somewhere
+        }
+        guard let img = imageAdd.image, imageSelected == true else {
+            print("BMO: Image must be selected")
+            return
+        }
+        
+        
+        //convert image into image data to send to firebase storage
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) { // 0.2 is compression
+            let imgUid = NSUUID().uuidString //get a new id for img
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg" //defensive data
+            
+            DataService.ds.REF_POST_IMGS.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
+                
+                if error != nil {
+                    print("BMO: Unable to upload image to Firebase Storage")
+                } else {
+                    print("BMO: Successfully uploaded image to Firebase Storage")
+                    if let downloadUrl = metadata?.downloadURL()?.absoluteString { //get raw string of download url. for storing in database
+                        self.postToFirebase(imgUrl: downloadUrl)
+                    }
+                    
+                }   
+                
+            }//pass imgData into imgUid
+            
+            self.tableView.reloadData()
+
+        }
+        
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        
+        let post: Dictionary<String, AnyObject> = [
+        "caption": captionField.text! as AnyObject,
+        "imageUrl" : imgUrl as AnyObject,
+        "likes": 0 as AnyObject
+        ]
+        
+        //childByAutoId creates a new unique identifier
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        //reset fields
+        captionField.text = ""
+        imageSelected = false //uiimagepicker
+        imageAdd.image = UIImage(named: "add-image")
+        
+    }
     
     @IBAction func signOutTapped(_ sender: UIImageView) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)

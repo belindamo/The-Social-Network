@@ -205,13 +205,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-post" translatesAutoresizingMaskIntoConstraints="NO" id="tgm-uQ-h6S" customClass="CircleView" customModule="The_Social_Network" customModuleProvider="target">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-post" translatesAutoresizingMaskIntoConstraints="NO" id="tgm-uQ-h6S" customClass="CircleView" customModule="The_Social_Network" customModuleProvider="target">
                                         <rect key="frame" x="313" y="4" width="57" height="57"/>
                                         <color key="backgroundColor" red="1" green="0.090196078430000007" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="57" id="82k-oY-64B"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Bbw-em-NDH" appends="YES" id="tH1-zC-wM8"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -243,10 +246,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-r9-cYA" customClass="FancyView" customModule="The_Social_Network" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="382" height="390.66666666666669"/>
+                                                    <rect key="frame" x="16" y="8" width="382" height="391"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-yp-xbB">
-                                                            <rect key="frame" x="4" y="4" width="374" height="359.66666666666669"/>
+                                                            <rect key="frame" x="4" y="4" width="374" height="360"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-tK-mHG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
@@ -258,28 +261,29 @@
                                                                                 <constraint firstAttribute="width" constant="65" id="qqQ-Cr-5ou"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThisFuckingGuy123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rik-Hb-wHW">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belindam0m0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rik-Hb-wHW">
                                                                             <rect key="frame" x="69" y="0.0" width="236" height="65"/>
                                                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
                                                                             <color key="textColor" red="1" green="0.5607843137254902" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-QC-VOa">
+                                                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="rjl-bq-iyj">
                                                                             <rect key="frame" x="309" y="0.0" width="65" height="65"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="65" id="i8D-JX-CD4"/>
+                                                                                <constraint firstAttribute="height" constant="65" id="E5m-rs-IAK"/>
+                                                                                <constraint firstAttribute="width" constant="65" id="Rkj-q4-bmV"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="WHi-TY-K8y">
-                                                                    <rect key="frame" x="0.0" y="72.333333333333314" width="374" height="220"/>
+                                                                    <rect key="frame" x="0.0" y="72.666666666666686" width="374" height="220"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="220" id="btN-2T-n55"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et d" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kay-no-TPh">
-                                                                    <rect key="frame" x="0.0" y="299.66666666666669" width="374" height="60"/>
+                                                                    <rect key="frame" x="0.0" y="300" width="374" height="60"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="sLe-tv-zOG"/>
@@ -291,7 +295,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-P0-xme">
-                                                            <rect key="frame" x="290" y="367.66666666666669" width="50" height="19"/>
+                                                            <rect key="frame" x="290" y="368" width="50" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="vaC-BU-B0k"/>
                                                             </constraints>
@@ -300,7 +304,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN7-OX-3t2">
-                                                            <rect key="frame" x="340" y="367.66666666666669" width="38" height="19"/>
+                                                            <rect key="frame" x="340" y="368" width="38" height="19"/>
                                                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -341,6 +345,7 @@
                                         <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="caption" destination="kay-no-TPh" id="J1N-Za-ld3"/>
+                                            <outlet property="likeImg" destination="rjl-bq-iyj" id="JYB-Uz-ixn"/>
                                             <outlet property="likesLbl" destination="DN7-OX-3t2" id="vp3-8i-RkM"/>
                                             <outlet property="postImg" destination="WHi-TY-K8y" id="Pnv-1N-fXN"/>
                                             <outlet property="profileImg" destination="xcP-LE-MzU" id="2aa-ow-7bE"/>
@@ -365,6 +370,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captionField" destination="uWd-jv-iO6" id="dGm-2I-nuc"/>
                         <outlet property="imageAdd" destination="OIg-w8-H7W" id="Xi2-I7-mRP"/>
                         <outlet property="tableView" destination="Ltw-aa-VwQ" id="3Ff-3X-wBE"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="signInVC" id="GLP-t6-C0y"/>
@@ -381,6 +387,11 @@
                         <action selector="addImageTapped:" destination="ajk-tI-1nu" id="upQ-J8-Vwz"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Bbw-em-NDH" userLabel="addPost">
+                    <connections>
+                        <action selector="postBtnTapped:" destination="ajk-tI-1nu" id="zFL-WI-YnE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="818.84057971014499" y="76.630434782608702"/>
         </scene>
@@ -390,7 +401,7 @@
         <image name="add-post" width="88" height="88"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
-        <image name="profile" width="113" height="155"/>
+        <image name="profile" width="6000" height="4000"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>
